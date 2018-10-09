@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../data.service';
-import { Observable } from 'rxjs';
 import { trigger,style,transition,animate,keyframes,query,stagger } from "@angular/animations";
+import { Observable } from 'rxjs';
+import { DataService } from '../data.service';
 
 @Component({
-  selector: 'app-posts',
-  templateUrl: './posts.component.html',
-  styleUrls: ['./posts.component.scss'],
+  selector: 'app-settings',
+  templateUrl: './settings.component.html',
+  styleUrls: ['./settings.component.scss'],
   animations: [
     trigger('listStagger', [
       transition('* <=> *', [
@@ -24,17 +24,11 @@ import { trigger,style,transition,animate,keyframes,query,stagger } from "@angul
     ])
   ]
 })
-export class PostsComponent implements OnInit {
-
-  posts$: object;
+export class SettingsComponent implements OnInit {
 
   constructor(private data: DataService) { }
 
   ngOnInit() {
-
-    this.data.getPosts().subscribe(
-      data => this.posts$ = data
-    )
   }
 
 }
